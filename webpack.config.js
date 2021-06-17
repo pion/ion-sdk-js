@@ -16,7 +16,7 @@ module.exports = [{
     rules: [{ test: /\.ts$/, loader: 'ts-loader' }],
   },
 },{
-  entry: './src/ion.ts',
+  entry: './src/connector/index.ts',
   devtool: 'source-map',
   output: {
     filename: 'ion-connector.min.js',

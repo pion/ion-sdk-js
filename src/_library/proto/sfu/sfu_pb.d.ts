@@ -1,7 +1,7 @@
 // package: sfu
-// file: sfu.proto
+// file: proto/sfu/sfu.proto
 
-import * as jspb from 'google-protobuf';
+import * as jspb from "google-protobuf";
 
 export class SignalRequest extends jspb.Message {
   getId(): string;
@@ -28,8 +28,8 @@ export class SignalRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SignalRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SignalRequest): SignalRequest.AsObject;
-  static extensions: { [key: number]: jspb.ExtensionFieldInfo<jspb.Message> };
-  static extensionsBinary: { [key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message> };
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: SignalRequest, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): SignalRequest;
   static deserializeBinaryFromReader(message: SignalRequest, reader: jspb.BinaryReader): SignalRequest;
@@ -37,11 +37,11 @@ export class SignalRequest extends jspb.Message {
 
 export namespace SignalRequest {
   export type AsObject = {
-    id: string;
-    join?: JoinRequest.AsObject;
-    description: Uint8Array | string;
-    trickle?: Trickle.AsObject;
-  };
+    id: string,
+    join?: JoinRequest.AsObject,
+    description: Uint8Array | string,
+    trickle?: Trickle.AsObject,
+  }
 
   export enum PayloadCase {
     PAYLOAD_NOT_SET = 0,
@@ -86,8 +86,8 @@ export class SignalReply extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SignalReply.AsObject;
   static toObject(includeInstance: boolean, msg: SignalReply): SignalReply.AsObject;
-  static extensions: { [key: number]: jspb.ExtensionFieldInfo<jspb.Message> };
-  static extensionsBinary: { [key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message> };
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: SignalReply, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): SignalReply;
   static deserializeBinaryFromReader(message: SignalReply, reader: jspb.BinaryReader): SignalReply;
@@ -95,13 +95,13 @@ export class SignalReply extends jspb.Message {
 
 export namespace SignalReply {
   export type AsObject = {
-    id: string;
-    join?: JoinReply.AsObject;
-    description: Uint8Array | string;
-    trickle?: Trickle.AsObject;
-    iceconnectionstate: string;
-    error: string;
-  };
+    id: string,
+    join?: JoinReply.AsObject,
+    description: Uint8Array | string,
+    trickle?: Trickle.AsObject,
+    iceconnectionstate: string,
+    error: string,
+  }
 
   export enum PayloadCase {
     PAYLOAD_NOT_SET = 0,
@@ -125,11 +125,13 @@ export class JoinRequest extends jspb.Message {
   getDescription_asB64(): string;
   setDescription(value: Uint8Array | string): void;
 
+  getConfigMap(): jspb.Map<string, string>;
+  clearConfigMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): JoinRequest.AsObject;
   static toObject(includeInstance: boolean, msg: JoinRequest): JoinRequest.AsObject;
-  static extensions: { [key: number]: jspb.ExtensionFieldInfo<jspb.Message> };
-  static extensionsBinary: { [key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message> };
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: JoinRequest, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): JoinRequest;
   static deserializeBinaryFromReader(message: JoinRequest, reader: jspb.BinaryReader): JoinRequest;
@@ -137,10 +139,11 @@ export class JoinRequest extends jspb.Message {
 
 export namespace JoinRequest {
   export type AsObject = {
-    sid: string;
-    uid: string;
-    description: Uint8Array | string;
-  };
+    sid: string,
+    uid: string,
+    description: Uint8Array | string,
+    configMap: Array<[string, string]>,
+  }
 }
 
 export class JoinReply extends jspb.Message {
@@ -152,8 +155,8 @@ export class JoinReply extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): JoinReply.AsObject;
   static toObject(includeInstance: boolean, msg: JoinReply): JoinReply.AsObject;
-  static extensions: { [key: number]: jspb.ExtensionFieldInfo<jspb.Message> };
-  static extensionsBinary: { [key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message> };
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: JoinReply, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): JoinReply;
   static deserializeBinaryFromReader(message: JoinReply, reader: jspb.BinaryReader): JoinReply;
@@ -161,8 +164,8 @@ export class JoinReply extends jspb.Message {
 
 export namespace JoinReply {
   export type AsObject = {
-    description: Uint8Array | string;
-  };
+    description: Uint8Array | string,
+  }
 }
 
 export class Trickle extends jspb.Message {
@@ -175,8 +178,8 @@ export class Trickle extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Trickle.AsObject;
   static toObject(includeInstance: boolean, msg: Trickle): Trickle.AsObject;
-  static extensions: { [key: number]: jspb.ExtensionFieldInfo<jspb.Message> };
-  static extensionsBinary: { [key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message> };
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: Trickle, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): Trickle;
   static deserializeBinaryFromReader(message: Trickle, reader: jspb.BinaryReader): Trickle;
@@ -184,9 +187,9 @@ export class Trickle extends jspb.Message {
 
 export namespace Trickle {
   export type AsObject = {
-    target: Trickle.TargetMap[keyof Trickle.TargetMap];
-    init: string;
-  };
+    target: Trickle.TargetMap[keyof Trickle.TargetMap],
+    init: string,
+  }
 
   export interface TargetMap {
     PUBLISHER: 0;
@@ -195,3 +198,4 @@ export namespace Trickle {
 
   export const Target: TargetMap;
 }
+

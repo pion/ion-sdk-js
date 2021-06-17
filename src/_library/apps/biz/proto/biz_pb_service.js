@@ -1,7 +1,7 @@
 // package: biz
-// file: biz.proto
+// file: apps/biz/proto/biz.proto
 
-var biz_pb = require("./biz_pb");
+var apps_biz_proto_biz_pb = require("../../../apps/biz/proto/biz_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var Biz = (function () {
@@ -15,8 +15,8 @@ Biz.Signal = {
   service: Biz,
   requestStream: true,
   responseStream: true,
-  requestType: biz_pb.SignalRequest,
-  responseType: biz_pb.SignalReply
+  requestType: apps_biz_proto_biz_pb.SignalRequest,
+  responseType: apps_biz_proto_biz_pb.SignalReply
 };
 
 exports.Biz = Biz;

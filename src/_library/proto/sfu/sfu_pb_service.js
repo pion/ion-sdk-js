@@ -1,7 +1,7 @@
 // package: sfu
-// file: sfu.proto
+// file: proto/sfu/sfu.proto
 
-var sfu_pb = require("./sfu_pb");
+var proto_sfu_sfu_pb = require("../../proto/sfu/sfu_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var SFU = (function () {
@@ -15,8 +15,8 @@ SFU.Signal = {
   service: SFU,
   requestStream: true,
   responseStream: true,
-  requestType: sfu_pb.SignalRequest,
-  responseType: sfu_pb.SignalReply
+  requestType: proto_sfu_sfu_pb.SignalRequest,
+  responseType: proto_sfu_sfu_pb.SignalReply
 };
 
 exports.SFU = SFU;
